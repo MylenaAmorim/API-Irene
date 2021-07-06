@@ -1,0 +1,18 @@
+crud mongoose
+documentação
+slide
+função de quantidade de doações recebidas
+autenticação e rota para usuario
+mecanismo do google maps
+
+
+no tipo da doação vai ser um array?
+no populate como passo duas relações?
+ao cadastrar o endereco é para passar 
+todos os dados no postman ou só o id?
+é para criar os controllers de endereçço mesmo não sendo utilizado?
+
+
+**Ideias**
+quero fazer para pontos de doações para animaiss, sertão... tenho roupas e aonde não sei aonde doar...
+pessoas que querem ser voluntarias...
