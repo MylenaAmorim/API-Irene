@@ -1,15 +1,15 @@
 const express = require("express")
 const router = express.Router()
 
-const controller = require("../controller/ongController")
-
-router.get("/", controller.mostraOngs)
-router.get("/:id", controller.mostraOng)
+const controller = require("../controllers/ongsController")
 
 router.post("/", controller.criaOng)
 
-router.patch("/:id", controller.patch)
+router.get("/", controller.mostraOngs)
+// router.get("/:id", controller.mostraOng)
 
-router.delete("/:id", controller.delete)
+router.patch("/:id", controller.alteraOng)
+
+router.delete("/:id", controller.deletaOng)
 
 module.exports = router;

@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGO_URL_PROD, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -34,6 +34,10 @@ app.use(function (req, res, next) { //passar parametros em função anonima ????
 });
 
 //rotas
+
+const ong = require('./routes/ongsRoutes')
+
+app.use('/ongs', ong)
 
 module.exports = app
 

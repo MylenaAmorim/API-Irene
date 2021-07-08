@@ -30,12 +30,12 @@ const ongsSchema = new mongoose.Schema({
     },
     endereco: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        required: false,
         ref:'enderecos'
     },
     tipoDoacoesRecebidas: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
+        required: false,
         ref:'tipoDoacoesRecebidas'
     }
 }, {
