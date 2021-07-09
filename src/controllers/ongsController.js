@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Ong = require('../models/ongs')
+const cors = require("cors")
 
 const criaOng = async(req, res) => {
     const ong = new Ong({
