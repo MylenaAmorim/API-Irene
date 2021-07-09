@@ -1,8 +1,8 @@
 const express = require("express")
 const cors = require("cors")
-const db = require("./databases/dbConfig")
+const db = require("databases/dbConfig")
 
-const index = require("./routes/ongsRoutes")
+const index = require("routes/ongsRoutes")
 db.connect()
 
 const app = express()
