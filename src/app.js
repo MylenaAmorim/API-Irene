@@ -1,6 +1,6 @@
 const express = require("express")
 const cors = require("cors")
-const db = require("./data/dbConfig")
+const db = require("./databases/dbConfig")
 
 const index = require("./routes/ongsRoutes")
 db.connect()
