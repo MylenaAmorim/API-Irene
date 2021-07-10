@@ -6,7 +6,7 @@ const controller = require("../controllers/ongsController")
 router.post("/", controller.criaOng)
 
 router.get("/", controller.mostraOngs)
-// router.get("/:id", controller.mostraOng)
+router.get("/:id", controller.mostraOng)
 
 router.patch("/:id", controller.alteraOng)
 

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const Ong = require('../models/ongs')
-const cors = require("cors")
 
 const criaOng = async(req, res) => {
     const ong = new Ong({
@@ -9,7 +8,14 @@ const criaOng = async(req, res) => {
         email: req.body.email,
         telefone: req.body.telefone,
         instagram: req.body.instagram,
-        descricao: req.body.descricao
+        descricao: req.body.descricao,
+        cep: req.body.cep,
+        cidade: req.body.cidade,
+        estado: req.body.estado,
+        bairro: req.body.bairro,
+        rua: req.body.rua,
+        numero: req.body.numero,
+        tipoDoacoes: req.body.tipoDoacoes
     })
 
     const OngExistente = await Ong.findOne({email: req.body.email})
@@ -27,13 +33,15 @@ const criaOng = async(req, res) => {
 }
 
 const mostraOngs = async (req, res) => {
-    const ongs = await Ong.find().populate('endereco') //??tipo doações
+    const ongs = await Ong.find().populate('tipoDoacoes') //??tipo doações
     return res.status(200).json(ongs)
-} 
+}
 
-// const mostraOng = async (req, res) => {
-//     const 
-// }
+const mostraOng = async (req, res) => {
+    const ong = await Ong.findById(req.params.id).populate('tipoDoacoes')
+
+    return res.status(200).json(ong)
+}
 
 const alteraOng = async (req, res) => {
     const encontraOng = await Ong.findById(req.params.id)
@@ -76,7 +84,7 @@ const deletaOng = async (req, res) => {
 module.exports = {
     criaOng,
     mostraOngs,
-    // mostraOng,
+    mostraOng,
     alteraOng,
     deletaOng
 }

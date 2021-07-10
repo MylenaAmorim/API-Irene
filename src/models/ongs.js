@@ -28,15 +28,34 @@ const ongsSchema = new mongoose.Schema({
     senha: { 
         type: String 
     },
-    endereco: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: false,
-        ref:'enderecos'
+    cep: { 
+        type: Number,
+        required: true
     },
-    tipoDoacoesRecebidas: {
+    cidade: { 
+        type: String,
+        required: true
+    },
+    estado: { 
+        type: String,
+        required: true
+    },
+    bairro: { 
+        type: String,
+        required: true
+    },
+    rua: { 
+        type: String,
+        required: true
+    },
+    numero: { 
+        type: String,
+        required: true
+    },
+    tipoDoacoes: {
         type: mongoose.Schema.Types.ObjectId,
         required: false,
-        ref:'tipoDoacoesRecebidas'
+        ref:'tipoDoacoes'
     }
 }, {
     versionKey: false
