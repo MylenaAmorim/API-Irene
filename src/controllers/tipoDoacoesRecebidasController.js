@@ -22,25 +22,25 @@ const criaTipo = async(req, res) => {
 }
 
 const mostraTipos = async (req, res) => {
-    const tipos = await Ong.find();
+    const tipos = await Tipo.find();
     return res.status(200).json(tipos)
 }
 
 const mostraTipo = async (req, res) => {
-    const tipo = await Ong.findById(req.params.id)
+    const tipo = await Tipo.findById(req.params.id)
 
     return res.status(200).json(tipo)
 }
 
 const alteraTipo = async (req, res) => {
-    const encontraTipo = await Ong.findById(req.params.id)
+    const encontraTipo = await Tipo.findById(req.params.id)
 
     if (encontraTipo == null) {
         return res.status(404).json({message: "Tipo de doação não encontrado!"})
     }
 
     if (req.body.nome != null) {
-        encontraOng.nome = req.body.nome
+        encontraTipo.nome = req.body.nome
     }
 
     try {
@@ -52,7 +52,7 @@ const alteraTipo = async (req, res) => {
 }
 
 const deletaTipo = async (req, res) => {
-    const encontraTipo = await Ong.findById(req.params.id)
+    const encontraTipo = await Tipo.findById(req.params.id)
 
     if (encontraTipo == null) {
         return res.status(404).json({message: "Tipo de doação não encontrado!"})
@@ -60,7 +60,7 @@ const deletaTipo = async (req, res) => {
 
     try {
         await encontraTipo.remove()
-        res.status(200).json({message: "Tipo de doação deletado com sucesso!"})
+        res.status(204).json({message: "Tipo de doação deletado com sucesso!"})
     } catch (erro) {
         res.status(500).json({message: erro.message})
     }

@@ -75,7 +75,7 @@ const deletaOng = async (req, res) => {
 
     try {
         await encontraOng.remove()
-        res.status(200).json({message: "ONG deletada com sucesso!"})
+        res.status(204).json({message: "ONG deletada com sucesso!"})
     } catch (erro) {
         res.status(500).json({message: erro.message})
     }
