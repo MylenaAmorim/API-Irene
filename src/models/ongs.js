@@ -29,28 +29,22 @@ const ongsSchema = new mongoose.Schema({
         type: String 
     },
     cep: { 
-        type: Number,
-        required: true
+        type: String,
     },
     cidade: { 
-        type: String,
-        required: true
+        type: String
     },
     estado: { 
-        type: String,
-        required: true
+        type: String
     },
     bairro: { 
-        type: String,
-        required: true
+        type: String
     },
     rua: { 
-        type: String,
-        required: true
+        type: String
     },
     numero: { 
-        type: String,
-        required: true
+        type: String
     },
     tipoDoacoes: {
         type: mongoose.Schema.Types.ObjectId,

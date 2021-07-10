@@ -39,8 +39,8 @@ const alteraTipo = async (req, res) => {
         return res.status(404).json({message: "Tipo de doação não encontrado!"})
     }
 
-    if (req.body.nome != null) {
-        encontraTipo.nome = req.body.nome
+    if (req.body.nomeTipo != null) {
+        encontraTipo.nomeTipo = req.body.nomeTipo
     }
 
     try {
@@ -55,12 +55,12 @@ const deletaTipo = async (req, res) => {
     const encontraTipo = await Tipo.findById(req.params.id)
 
     if (encontraTipo == null) {
-        return res.status(404).json({message: "Tipo de doação não encontrado!"})
+        return res.status(404).json({message: "Tipo de doação não encontrada!"})
     }
 
     try {
         await encontraTipo.remove()
-        res.status(204).json({message: "Tipo de doação deletado com sucesso!"})
+        res.status(204).json({message: "Tipo de doação deletada com sucesso!"})
     } catch (erro) {
         res.status(500).json({message: erro.message})
     }
