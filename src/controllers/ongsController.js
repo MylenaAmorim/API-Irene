@@ -15,6 +15,7 @@ const criaOng = async(req, res) => {
         bairro: req.body.bairro,
         rua: req.body.rua,
         numero: req.body.numero,
+        numeroContaDoacao: req.body.numeroContaDoacao,
         tipoDoacoes: req.body.tipoDoacoes
     })
 
@@ -33,7 +34,7 @@ const criaOng = async(req, res) => {
 }
 
 const mostraOngs = async (req, res) => {
-    const ongs = await Ong.find().populate('tipoDoacoes') //??tipo doações
+    const ongs = await Ong.find().populate('tipoDoacoes')
     return res.status(200).json(ongs)
 }
 
@@ -41,6 +42,11 @@ const mostraOng = async (req, res) => {
     const ong = await Ong.findById(req.params.id).populate('tipoDoacoes')
 
     return res.status(200).json(ong)
+}
+
+const mostraOngsPorTipoDoacoes = async (req, res) => {
+    const ongs = await Ong.find().populate('tipoDoacoes')
+    const ongsFiltradas = Ong.filter(ong => ong.tipoDoacoes.nomeTipo == '/' + req.body.nomeTipo + '/')
 }
 
 const alteraOng = async (req, res) => {
@@ -86,5 +92,6 @@ module.exports = {
     mostraOngs,
     mostraOng,
     alteraOng,
-    deletaOng
+    deletaOng,
+    mostraOngsPorTipoDoacoes
 }

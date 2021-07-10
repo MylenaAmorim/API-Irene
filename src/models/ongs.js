@@ -17,7 +17,7 @@ const ongsSchema = new mongoose.Schema({
         type: String
     },
     descricao: {
-        type: String, //tipo do dado ??????
+        type: String,
         required: true
     },
     dataInclusao: { 
@@ -44,6 +44,9 @@ const ongsSchema = new mongoose.Schema({
         type: String
     },
     numero: { 
+        type: String
+    },
+    numeroContaDoacao: {
         type: String
     },
     tipoDoacoes: {
