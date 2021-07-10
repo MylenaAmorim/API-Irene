@@ -46,7 +46,7 @@ const mostraOng = async (req, res) => {
 
 const mostraOngsPorTipoDoacoes = async (req, res) => {
     const ongs = await Ong.find().populate('tipoDoacoes')
-    const ongsFiltradas = Ong.filter(ong => ong.tipoDoacoes.nomeTipo == '/' + req.body.nomeTipo + '/')
+    const ongsFiltradas = Ong.filter(ong => ong.tipoDoacoes.nomeTipo == '/' + req.params.nomeTipo + '/')
 }
 
 const alteraOng = async (req, res) => {
