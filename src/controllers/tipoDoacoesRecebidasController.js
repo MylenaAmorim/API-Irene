@@ -4,10 +4,10 @@ const Tipo = require('../models/tipoDoacoesRecebidas')
 const criaTipo = async(req, res) => {
     const tipo = new Tipo({
         _id: new mongoose.Types.ObjectId(),
-        nome: req.body.nome
+        nomeTipo: req.body.nomeTipo
     })
 
-    const tipoExistente = await Tipo.findOne({nome: req.body.nome})
+    const tipoExistente = await Tipo.findOne({nomeTipo: req.body.nomeTipo})
 
     if (tipoExistente) {
         return res.status(409).json({error: "Tipo de doação já cadastrado!"})
