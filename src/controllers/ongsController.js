@@ -46,10 +46,10 @@ const mostraOng = async (req, res) => {
 }
 
 const mostraOngsPorTipoDoacoes = async (req, res) => {
-    const ongs = await Ong.find().populate('tipoDoacoes')
-    const ongsFiltradas = ongs.filter(ong => ong.tipoDoacoes.nomeTipo == "alimentos não perecíveis")
+    const ongs = await Ong.find({ tipoDoacoes: req.params._id }).populate('tipoDoacoes')
+    // const ongsFiltradas = ongs.filter(ong => ong.tipoDoacoes.nomeTipo == "alimentos não perecíveis")
 
-    return res.status(200).json(ongsFiltradas)
+    return res.status(200).json(ongs)
 }
 
 const alteraOng = async (req, res) => {
