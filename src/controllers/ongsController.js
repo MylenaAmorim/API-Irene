@@ -9,6 +9,7 @@ const criaOng = async(req, res) => {
         telefone: req.body.telefone,
         instagram: req.body.instagram,
         descricao: req.body.descricao,
+        comoAjudar: req.body.comoAjudar,
         cep: req.body.cep,
         cidade: req.body.cidade,
         estado: req.body.estado,
@@ -46,7 +47,7 @@ const mostraOng = async (req, res) => {
 
 const mostraOngsPorTipoDoacoes = async (req, res) => {
     const ongs = await Ong.find().populate('tipoDoacoes')
-    const ongsFiltradas = ongs.find({ nomeTipo: '/' + req.params.nomeTipo + '/' })
+    const ongsFiltradas = ongs.filter( ong => ong.tipoDoacoes.id == req.params.id )
 
     return res.status(200).json(ongsFiltradas)
 }

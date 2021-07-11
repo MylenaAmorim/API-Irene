@@ -7,7 +7,7 @@ router.post("/", controller.criaOng)
 
 router.get("/", controller.mostraOngs)
 router.get("/:id", controller.mostraOng)
-router.get("/ongsPorTipoDoacoes/:nomeTipo", controller.mostraOngsPorTipoDoacoes)
+router.get("/ongsPorTipoDoacoes/:id", controller.mostraOngsPorTipoDoacoes)
 
 router.patch("/:id", controller.alteraOng)
 

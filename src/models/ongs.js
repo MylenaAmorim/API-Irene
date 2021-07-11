@@ -20,6 +20,9 @@ const ongsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    comoAjudar: {
+        type: String
+    },
     dataInclusao: { 
         type: Date,
         required: true,
