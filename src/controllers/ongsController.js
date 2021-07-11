@@ -47,7 +47,7 @@ const mostraOng = async (req, res) => {
 
 const mostraOngsPorTipoDoacoes = async (req, res) => {
     const ongs = await Ong.find().populate('tipoDoacoes')
-    const ongsFiltradas = ongs.filter( ong => ong.tipoDoacoes.id == req.params.id )
+    const ongsFiltradas = ongs.filter(ong => ong.tipoDoacoes._id == req.params.id)
 
     return res.status(200).json(ongsFiltradas)
 }
