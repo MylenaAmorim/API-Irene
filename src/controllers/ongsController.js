@@ -79,7 +79,7 @@ const deletaOng = async (req, res) => {
     const encontraOng = await Ong.findById(req.params.id)
 
     if (encontraOng == null) {
-        return res.status(404).json({message: "ONG não encontrada!"})
+        return res.status(404).json("ONG não encontrada!")
     }
 
     try {
