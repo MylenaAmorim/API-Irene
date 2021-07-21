@@ -1,43 +1,14 @@
 # API-Irene
 
-## Objetivo
+## Objetivo:
 #### Possibilitar as pessoas encontrarem e cadastrarem ONG’s, para que as pessoas que querem ajudar pessoas ou animais fazendo doações ou sendo voluntário e não saibem onde encontrar esses locais, possam encontrar ONG’s de maneira rápida e simples.
 
+## Descrição:
+#### A API RESTful é uma aplicação MVP (Produto Mínimo Viável) desenvolvida em Node.js, juntamente com o ODM mongoose para prover conexão ao banco de dados NoSQL MongoDB de maneira simples e com o framework Express. Ademais, foi utilizado o MongoDB Atlas para o armazenamento dos dados na nuvem e o Hiroku para a hospedagem. E atualmente a API possibilita as quatros operações do CRUD (Criar, Remover, Atualizar, Deletar), além do filtro de pesquisa de ONG's de acordo com o tipo de doação que a instituição recebe para que o usuario possa encontrar ONG's conforme o tipo de doação que o mesmo quer fazer.
 
-## Rotas
 
-#### GET ongs
-Rota que retorna uma lista com todas as ONG’s e seus dados.
-
-#### GET ongs/:id
-Rota que retorna os dados de uma ONG, baseado no id.
-
-#### GET ongs/ongsPorTipoDoacoes/:id
-Rota que retorna as ONG’s, baseadas no id do tipo de doação passada no parâmetro.
-
-#### POST ongs
-Rota que recebe uma nova ONG, adiciona ela à lista e retorna os dados do mesmo.
-
-#### PATCH ongs/:id
-Rota que atualiza os dados de uma ONG e retorna seus dados atualizados.
-
-#### DELETE ongs/:id
-Rota que deleta uma ONG baseada em seu id.
-
-#### GET tiposDoacoesRecebidas
-Rota que retorna uma lista com todos os tipos de doações que as ONG 's podem receber e os seus dados.
-
-#### GET tiposDoacoesRecebidas/:id
-Rota que retorna os dados de um tipo de doação, baseado no id.
-
-#### POST tiposDoacoesRecebidas
-Rota que recebe um novo tipo de doação, adiciona ele a lista e retorna os dados do mesmo.
-
-#### PATCH tiposDoacoesRecebidas/:id
-Rota que atualiza os dados de um tipo de doação recebida e retorna seus dados atualizados.
-
-#### DELETE tiposDoacoesRecebidas/:id
-Rota que deleta um tipo de doação recebida baseado em seu id.
+## Documentação
+##### A documentação foi feita a partir da ferramenta Notion. Link da documentação:
 
 
 ## Desafios
