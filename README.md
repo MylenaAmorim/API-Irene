@@ -8,7 +8,8 @@
 
 
 ## Documentação
-##### A documentação foi feita a partir da ferramenta Notion. Link da documentação:
+##### A documentação foi feita a partir da ferramenta Notion. 
+Link da documentação: https://www.notion.so/API-Irene-3b49a45afe5842428dfccefd0e697b9e
 
 
 ## Desafios
